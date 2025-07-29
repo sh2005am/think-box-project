@@ -27,7 +27,7 @@ function HomePage() {
     if (!token) return; // Don't fetch if there's no token
 
     try {
-      const response = await fetch(`${apiUrl}api/messages`, {
+      const response = await fetch(`${apiUrl}/api/messages`, {
         headers: {
           // Add the Authorization header to fetch messages
           'Authorization': `Bearer ${token}`,
