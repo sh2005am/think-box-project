@@ -77,7 +77,7 @@ function SignUpPage() {
         </div>
         <button type="submit">Sign Up</button>
       </form>
-      
+      <p>already have an account? <a href="/login">Login</a></p>
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
