@@ -1,0 +1,66 @@
+.up {
+  margin: auto;
+  text-align: center;
+  padding: 8px;
+   margin: 0px 0px 2px 0px;
+  background-color: rgba(255, 166, 0, 0.708);
+  border-radius: 0rem 0rem 0.8rem 0.8rem;
+}
+input {
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px;
+  margin: 2px 0px;
+  display: inline-block;
+  border-radius: 0.8rem;
+  background-color: rgba(128, 128, 128, 0.396);
+}
+
+button {
+   width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px;
+  margin: 2px 0px;
+  display: inline-block;
+  border-radius: 0.8rem;
+  background-color: rgba(3, 36, 247, 0.397);
+}
+.enter {
+  display: flex;
+}
+.container {
+  width: 100%;
+  margin: 2px 0px;
+  display: inline-block;
+  border-radius: 0.8rem;
+  background-color: #2f3e46; /* dark blue-gray */
+  color: #f1f1f1;
+   border-radius: 0.8rem 0.8rem 0rem 0rem;
+}
+.card {
+width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 2px;
+  padding: 12px;
+  display: inline-block;
+  border-radius: 0.8rem;
+  background-color: #fef6e4; /* soft warm ivory */
+  color: #2d2d2d;
+  display: flex;
+  justify-content: space-between;
+}
+.mes {
+  width: 80%;
+}
+@media screen and (max-width: 600px) {
+  .enter {
+    flex-direction: column;
+  }
+  .enter1 {
+    flex-direction: column;
+  }
+
+}
