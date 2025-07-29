@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import apiUrl from '../apiConfig'; // Adjust path if needed
 
 function SignUpPage() {
@@ -77,7 +78,7 @@ function SignUpPage() {
         </div>
         <button type="submit">Sign Up</button>
       </form>
-      <p>already have an account? <a href="/login">Login</a></p>
+      <p>already have an account? <Link to="/login">Login</Link></p>
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
