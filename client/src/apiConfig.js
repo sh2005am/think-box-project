@@ -1,5 +1,4 @@
 const apiUrl = import.meta.env.DEV
-  ? '/api' // Development URL (uses the proxy)
-  : 'https://your-live-backend-api.onrender.com/api'; // Production URL (replace this later)
-
+  ? '/api' // For local development
+  : 'https://think-box-api.onrender.com/api'; // <-- Your live Render URL
 export default apiUrl;
