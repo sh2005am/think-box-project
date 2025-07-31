@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Header from './components/Header';
 import { useAuth } from '../context/AuthContext';
 import Deletelogo from '../assets/icons8-delete.svg';
 import apiUrl from '../apiConfig'; // Adjust path if needed
@@ -96,14 +97,15 @@ function HomePage() {
 
   return (
     <>
-      <header className='up'>
+      {/* <header className='up'>
         <h1>Think Box</h1>
         <nav>
           <span>Welcome, {user.username}</span>
           <button onClick={handleLogout}>Logout</button>
         </nav>
-      </header>
-      
+      </header> */}
+      <Header value1={user.username} value2={handleLogout} isHome={true} action="logout"/>
+        
       <form className="enter" onSubmit={handleSubmit}>
         <input
           type="text"

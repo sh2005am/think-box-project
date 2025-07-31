@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
+import Header from './components/Header';
+import '../pages/login.css'
 import apiUrl from '../apiConfig'; // Adjust path if needed
 
 function LoginPage() {
@@ -19,6 +21,9 @@ function LoginPage() {
       [event.target.name]: event.target.value,
     });
   };
+  function bSignUp () {
+    navigate('/signup');
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -51,12 +56,16 @@ function LoginPage() {
   };
 
   return (
+     
     <div>
+      
+      <Header value3={"new to think box"} value2={bSignUp} isHome={false} action={"Sign Up"}/>
+      <div className="mainBody">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <div className="enter">
             <div className="group">
-                username:
+               <label htmlFor="username">Enter Username</label> 
           <input
             type="text"
             id="username"
@@ -67,7 +76,7 @@ function LoginPage() {
           />
   </div>
   <div className="group">
-    password:
+    <label htmlFor="username">Enter password</label> 
           <input
             type="password"
             id="password"
@@ -80,10 +89,8 @@ function LoginPage() {
         </div>
         <button type="submit">Log In</button>
       </form>
-      <p>
-        Don't have an account? <Link to="/signup">Sign Up</Link>
-      </p>
       {error && <p style={{ color: 'red' }}>{error}</p>}
+    </div>
     </div>
   );
 }

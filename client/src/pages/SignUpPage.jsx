@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Header from './components/Header';
 import apiUrl from '../apiConfig'; // Adjust path if needed
 
 function SignUpPage() {
@@ -50,11 +51,13 @@ function SignUpPage() {
 
   return (
     <div>
+      <Header value3={"already have an account"} value2={() => navigate('/login')} isHome={false} action={"Login"} />
+      <div className="mainBody">
       <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <div className="enter">
         <div className='group'>
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">Enter Username</label>
           <input
             type="text"
             id="username"
@@ -65,7 +68,7 @@ function SignUpPage() {
           />
         </div>
         <div className='group'>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Enter Password</label>
           <input
             type="password"
             id="password"
@@ -78,8 +81,8 @@ function SignUpPage() {
         </div>
         <button type="submit">Sign Up</button>
       </form>
-      <p>already have an account? <Link to="/login">Login</Link></p>
       {error && <p style={{ color: 'red' }}>{error}</p>}
+    </div>
     </div>
   );
 }
