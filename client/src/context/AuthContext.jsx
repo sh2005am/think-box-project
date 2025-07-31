@@ -1,29 +1,34 @@
 import React, { createContext, useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
-    // This function runs only on the initial load
-    const storedUser = localStorage.getItem('user');
     try {
-      // If a user is stored, parse it from JSON, otherwise return null
-      return storedUser ? JSON.parse(storedUser) : null;
+      const storedUser = localStorage.getItem('user');
+      if (!storedUser) return null;
+
+      const parsedUser = JSON.parse(storedUser);
+      
+      if (parsedUser && parsedUser.id && parsedUser.username) {
+        return parsedUser;
+      }
+      return null; 
     } catch (error) {
-      // If parsing fails, return null
       return null;
     }
   });
 
+  // --- THIS PART WAS MISSING ---
   const [token, setToken] = useState(localStorage.getItem('token') || null);
   
   const login = (data) => {
     localStorage.setItem('token', data.token);
-    localStorage.setItem('user', JSON.stringify(data.user)); // We stringify the user object to store it
+    localStorage.setItem('user', JSON.stringify(data.user));
     setToken(data.token);
     setUser(data.user);
   };
+  // -----------------------------
 
   const logout = () => {
     localStorage.removeItem('token');
